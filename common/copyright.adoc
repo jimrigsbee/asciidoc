@@ -1,0 +1,3 @@
+Copyright (C) 2018 Red Hat, Inc.
+
+This is where we put our standard copyright stuff.

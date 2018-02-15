@@ -1,0 +1,18 @@
+Red Hat OpenShift Development I: Containerizing Applications
+============================================================
+Student Workbook
+DO288-OCP3.6-en-1-20180124
+:doctype: book
+
+OCP 3.6 DO288 +
+Red Hat OpenShift Development I: Containerizing Applications +
+Edition 1 20180124
+
+*Authors:* Douglas Silva, Fernando Lozano, Ravishankar Srinivasan +
+*Editor:* Seth Kenlon
+
+include::common/copyright.adoc[]
+
+include::sections/introduction.adoc[]
+
+include::sections/chapter01sec01[]

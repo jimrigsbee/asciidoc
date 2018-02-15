@@ -1,0 +1,41 @@
+== Deploying an Application to an OpenShift Cluster
+
+=== Objectives
+After completing this section, students should be able to:
+
+* Deploy an application to the cluster from a Dockerfile with the CLI.
+* Describe the resources created in a project by the *oc new-app* command
+and the web console.
+
+=== Development Paths
+[width="100%",cols="1a"]
+|===
+|
+* Red Hat OpenShift Container Platform is designed for building and deploying
+containerized applications:
+** Complete application life cycle is managed using OpenShift tools
+** Existing containerized applications are built outside of OpenShift
+* *oc new-app* command creates resources to build (optional) and deploy
+|===
+
+[width="100%",cols="1a"]
+|===
+|
+* *oc new-app* command:
+** Pass a URL that points to a Git repository or a container image
+* Command decides what type of application to build and/or deploy
+** Source-to-Image
+** Dockerfile
+** Docker Image
+|===
+
+[width="100%",cols="1a"]
+|===
+|
+* Resources created by *oc new-app* command:
+** Build Configuration
+** Image Stream
+** Deployment Configuration
+** Service for all ports exposed
+* These resources create other Kubernetes resources
+|===

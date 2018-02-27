@@ -72,4 +72,30 @@ They are part of the algorithm to determine which resources to create.
 +
 The output shows that the *oc new-app* command correctly identified the URL
 as a Git repository and created a build configuration.
-.. Follow the build logs        
+.. Follow the build logs:
++
+----
+[student@workstation ~]$ oc logs -f bc/echo
+Cloning "http://services.lab.example.com/rhel7-echo" ...
+...
+Pulling image registry.lab.example.com:5000/rhel7:7.3 ...
+...
+Step 1 : FROM registry.lab.example.com:5000/rhel7:7.3 <1>
+...
+Step 2 : CMD bash -c "while true; do echo test; sleep 15; done"
+...
+Step 3 : ENV "OPENSHIFT_BUILD_NAME" "echo-1" ... <2>
+...
+Successfully built 434df2dba1bd
+Pushing image docker-registry.default.svc:5000/docker-build/echo:latest ...
+...
+Push successful
+----
++
+<1> The *oc new-app* command correctly identified the Git repository as a Dockerfile
+project and the OpenShift build performs a Dockerfile build.
+<2> OpenShift adds metadata to the application container image using ENV and LABEL
+instructions.
+. Verify that the application works inside OpenShift.
+
+_remainder of lab has been removed for brevity of example_

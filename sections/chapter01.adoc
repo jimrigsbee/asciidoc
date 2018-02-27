@@ -1,4 +1,4 @@
-= Chapter 1: Starting with XYZ
+= Chapter 1: Deploying and Managing Applications on an OpenShift Cluster
 *Overview*
 [width="100%",cols="5,10a"]
 |===
@@ -24,3 +24,5 @@ Deploying and Managing Applications on an OpenShift Cluster
 |===
 
 include::chapter01s01.adoc[]
+
+include::chapter01s02.adoc[]

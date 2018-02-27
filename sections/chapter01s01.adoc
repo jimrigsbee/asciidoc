@@ -8,6 +8,7 @@ After completing this section, students should be able to:
 and the web console.
 
 === Development Paths
+.Deployment Scenarios
 [width="100%",cols="1a"]
 |===
 |
@@ -18,17 +19,68 @@ containerized applications:
 * *oc new-app* command creates resources to build (optional) and deploy
 |===
 
+.Building and Deploying with CLI
 [width="100%",cols="1a"]
 |===
 |
 * *oc new-app* command:
 ** Pass a URL that points to a Git repository or a container image
-* Command decides what type of application to build and/or deploy
+* Command decides what type of application to build and/or deploy:
 ** Source-to-Image
 ** Dockerfile
 ** Docker Image
 |===
 
+.Specifying the Builder Image
+[width="100%",cols="1a"]
+|===
+|
+* Specifying a builder image stream on the Git URL:
+----
+oc new-app php~http://gitserver.example.com/mygitrepo
+----
+* Specifying a builder image stream with the image stream argument:
+----
+oc new-app -i php http://gitserver.example.com/mygitrepo
+----
+|===
+
+.Deploying Existing Containerized Applications
+[width="100%",cols="1a"]
+|===
+|
+* Specify the registry and image name:
+----
+oc new-app registry.example.com/mycontainerimage
+----
+|===
+
+.Deploying Existing Dockerfiles
+[width="100%",cols="1a"]
+|===
+|
+* Specify the Git repository that contains the Dockerfile
+----
+oc new-app http://gitserver.example.com/mydockerfilerepo
+----
+|===
+
+.Disambiguation Options for *oc new-app*
+[options="header", width="100%",cols="1,3"]
+|===
+| Option | Description
+| *--image-stream* or *i*
+| Provides the image stream to be used as either the S2I builder image for an S2I
+build or to deploy a container image.
+| *--strategy*
+| Provides the build strategy, usually *docker* or *source*
+| *--code*
+| Provides the URL to a Git repository to be used as input to an S2I build.
+| *--docker-image*
+| Provides the URL to a container image to be deployed.
+|===
+
+.Generated Resources
 [width="100%",cols="1a"]
 |===
 |
@@ -38,4 +90,29 @@ containerized applications:
 ** Deployment Configuration
 ** Service for all ports exposed
 * These resources create other Kubernetes resources
+|===
+
+.Image Streams
+[width="100%",cols="1a"]
+|===
+|
+* An _image stream_ resource refers to container images and caches their metadata
+* Build and Deployment configurations use image stream events to trigger behavior:
+** Trigger a new S2I build when the builder image changes
+** Trigger a new deployment when the application container image changes
+* To create a new image stream use the *oc import-image* command:
+----
+oc import-image myis --confirm \
+   --from registry.acme.example.com:5000/acme/awesome --insecure
+----
+|===
+
+.Image Stream Tags
+[width="100%",cols="1a"]
+|===
+|
+* An _image stream tag_ points to a particular container image in an image stream
+** *ruby:2.0* refers to *openshift3/ruby-20-rhel7*
+** *ruby:2.2* refers to *openshift3/ruby-22-rhel7*
+* An image stream can have one or more tags
 |===

@@ -116,3 +116,9 @@ oc import-image myis --confirm \
 ** *ruby:2.2* refers to *openshift3/ruby-22-rhel7*
 * An image stream can have one or more tags
 |===
+
+=== References
+Further information is available in the Application Life Cycle Management
+chapter of the _Developer Guide_ for Red Hat OpenShift Container Platform 3.6;
+at
+https://access.redhat.com/documentation/en-us/openshift_container_platform/3.6/html/developer_guide/

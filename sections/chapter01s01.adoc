@@ -8,6 +8,8 @@ After completing this section, students should be able to:
 and the web console.
 
 === Development Paths
+:table-caption:
+:table-number: 0
 .Deployment Scenarios
 [width="100%",cols="1a"]
 |===

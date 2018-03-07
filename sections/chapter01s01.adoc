@@ -109,6 +109,10 @@ oc import-image myis --confirm \
 ----
 |===
 
+[[webconsole_projects]]
+.Web console projects listing
+image::webconsole-projects.png[]
+
 .Image Stream Tags
 [width="100%",cols="1a"]
 |===
@@ -117,6 +121,7 @@ oc import-image myis --confirm \
 ** *ruby:2.0* refers to *openshift3/ruby-20-rhel7*
 ** *ruby:2.2* refers to *openshift3/ruby-22-rhel7*
 * An image stream can have one or more tags
+* Note web console projects listing in figure <<webconsole_projects>>
 |===
 
 === References

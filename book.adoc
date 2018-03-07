@@ -1,8 +1,12 @@
+:imagesdir: ./images
 Red Hat OpenShift Development I: Containerizing Applications
 ============================================================
 Student Workbook
-DO288-OCP3.6-en-1-20180124
+{release-string}
 :doctype: book
+:title-logo-image: image:RHT-banner.svg[]
+:toc:
+:toclevels: 1
 
 OCP 3.6 DO288 +
 Red Hat OpenShift Development I: Containerizing Applications +

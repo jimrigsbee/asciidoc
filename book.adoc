@@ -4,6 +4,7 @@ Red Hat OpenShift Development I: Containerizing Applications
 Student Workbook
 {release-string}
 :doctype: book
+:media: prepress
 :title-logo-image: image:RHT-banner.svg[]
 :toc:
 :toclevels: 1
